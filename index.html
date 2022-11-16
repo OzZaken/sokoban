@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sokoban</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="initGame(0)" onkeyup="handleKey(event)">
+    <h1 class="h1">Sokoban</h1>
+
+    <table>
+        <thead>
+            <tr class="header-row">
+                <th>Level<span class="game-lvl"></span></th>
+                <th>Steps Left<span class="score"></span></th>
+                <th>Time<span class="timer">0:00</span></th>
+            </tr>
+            <!-- progress-bar -->
+            <tr>
+                <th>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-inner"></div>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="board"></tbody>
+    </table>
+
+    <div class="modal">
+        <div hidden class="modal-state">
+            <h2>You Win!</h2>
+            <h3>lets Move on Next Lvl</h3>
+            <button onclick="onNextLvl()">Next Lvl</button>
+        </div>
+
+        <div hidden class="modal-state">
+            <h2>You lose!</h2>
+            <h3>You can always try again</h3>
+            <button onclick="initGame()">Try again</button>
+        </div>
+    </div>
+
+    <script src="js/maps.js"></script>
+    <script src="js/elements.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
